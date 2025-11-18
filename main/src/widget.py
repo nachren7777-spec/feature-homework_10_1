@@ -1,12 +1,16 @@
+"""Неизменяемые данные"""
 SPACE: str = " "
 
 def mask_account_card(number_card_or_account: str)-> str:
     """Функция, которая маскирует номер карты или счёта."""
     if len(number_card_or_account) <= 20:
+        """Защита от неправильного ввода - короткий ввод текста"""
         return "Ошибка ввода номера карты"
+    """Проверка на счёт"""
     check_account: str = number_card_or_account[-20:]
     check_account_bool: bool = check_account.isdigit()
     if check_account_bool:
+        """Маскировка счёта"""
         account_str: str = number_card_or_account[:-20]
         mask_account_slice_1: str = "**"
         mask_account_slice_2: str = check_account[16:]
@@ -16,9 +20,11 @@ def mask_account_card(number_card_or_account: str)-> str:
                 + mask_account_slice_2
         )
         return mask_account_mask
+    """Проверка на карту"""
     check_card: str = number_card_or_account[-16:]
     check_card_bool: bool = check_card.isdigit()
     if check_card_bool:
+        """Маскировка карты"""
         card_str: str = number_card_or_account[:-16]
         card_number_slice_1: str = check_card[0:4]
         card_number_slice_2: str = check_card[4:6]
@@ -34,6 +40,7 @@ def mask_account_card(number_card_or_account: str)-> str:
         )
         return card_number_mask
     else:
+        """Затычка, чтобы не ругался mypy"""
         return "Ошибка ввода номера карты"
 
 
@@ -51,6 +58,7 @@ def get_date(date_input: str)-> str:
     return date_result
 
 
+"""Вызовы функций"""
 mask_account_or_card_number: str = input("Введите номер карты или счёта ")
 print(mask_account_card(mask_account_or_card_number))
 
