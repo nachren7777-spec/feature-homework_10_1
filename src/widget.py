@@ -1,7 +1,8 @@
 """Неизменяемые данные"""
 SPACE: str = " "
 
-def mask_account_card(number_card_or_account: str)-> str:
+
+def mask_account_card(number_card_or_account: str) -> str:
     """Функция, которая маскирует номер карты или счёта."""
     if len(number_card_or_account) <= 20:
         """Защита от неправильного ввода - короткий ввод текста"""
@@ -15,9 +16,9 @@ def mask_account_card(number_card_or_account: str)-> str:
         mask_account_slice_1: str = "**"
         mask_account_slice_2: str = check_account[16:]
         mask_account_mask: str = (
-                account_str + SPACE
-                + mask_account_slice_1
-                + mask_account_slice_2
+            account_str + SPACE
+            + mask_account_slice_1
+            + mask_account_slice_2
         )
         return mask_account_mask
     """Проверка на карту"""
@@ -32,11 +33,11 @@ def mask_account_card(number_card_or_account: str)-> str:
         card_number_slice_4: str = "****"
         card_number_slice_5: str = check_card[13:]
         card_number_mask: str = (
-                card_str + SPACE
-                + card_number_slice_1 + SPACE
-                + card_number_slice_2 + card_number_slice_3 + SPACE
-                + card_number_slice_4 + SPACE
-                + card_number_slice_5
+            card_str + SPACE
+            + card_number_slice_1 + SPACE
+            + card_number_slice_2 + card_number_slice_3 + SPACE
+            + card_number_slice_4 + SPACE
+            + card_number_slice_5
         )
         return card_number_mask
     else:
@@ -44,7 +45,7 @@ def mask_account_card(number_card_or_account: str)-> str:
         return "Ошибка ввода номера карты"
 
 
-def get_date(date_input: str)-> str:
+def get_date(date_input: str) -> str:
     """Функция, которая принимает строку, а возвращает дату."""
     year_date_input: str = date_input[0:4]
     month_date_input: str = date_input[5:7]
