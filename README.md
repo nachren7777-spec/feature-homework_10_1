@@ -10,16 +10,16 @@
 5) Выводит список по ключу
 
 # Установка
-##Ссылка на скачивание проекта:
+## Ссылка на скачивание проекта:
 [GitHub]([https://github.com](https://github.com/nachren7777-spec/feature-homework_10_1.git))
 
-# Зависимости
-##black
-##isort
-##mypy
+# Зависимости:
+1) black
+2) isort
+3) mypy
 
 # Конфигурационные шаги
-##В файле pyproject.toml
+## В файле pyproject.toml
 
 # Лицензия.
-##MIT License
+## MIT License
