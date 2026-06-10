@@ -2,22 +2,26 @@ from typing import List
 
 """словарь по умолчанию"""
 default_dict: List[dict] = [
-                            {'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
-                            {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'},
-                            {'id': 594226727, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'},
-                            {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}
-                            ]
+    {'id': 41428829, 'state': 'EXECUTED',
+     'date': '2019-07-03T18:35:29.512364'},
+    {'id': 939719570, 'state': 'EXECUTED',
+     'date': '2018-06-30T02:08:58.425572'},
+    {'id': 594226727, 'state': 'CANCELED',
+     'date': '2018-09-12T21:27:25.241689'},
+    {'id': 615064591, 'state': 'CANCELED',
+     'date': '2018-10-14T08:21:33.419441'}
+]
 
 
-def filter_by_state(default_dict: List[dict], state='EXECUTED') -> List[dict]:
+def filter_by_state(data: List[dict], state: str ='EXECUTED') -> List[dict]:
     """функция, которая возвращает значения по параметру state"""
-    return [i for i in default_dict if i['state'] == state]
+    return [i for i in data if i['state'] == state]
 
 
-"""ввод переменной state'"""
-user_state: str = input()
+"""ввод переменной state"""
+state: str = input()
 """постоянное значение state 'EXECUTED"""
-if not user_state:
-    user_state = 'EXECUTED'
+if not state:
+    state = 'EXECUTED'
 """вызов функции"""
-filter_by_state(default_dict, user_state)
+filter_by_state(default_dict, state)
