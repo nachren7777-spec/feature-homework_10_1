@@ -11,8 +11,8 @@
 
 # Установка
 1) Клонируйте репозиторий командой:
-git clone [https://github.com](https://github.com/nachren7777-spec/feature-homework_10_1/pulls)
-2) Создайте виртуальное окружение (рекомендуется):
+git clone git@github.com:nachren7777-spec/feature-homework_10_1.git
+3) Создайте виртуальное окружение (рекомендуется):
 `python -m venv\Scripts\activate/bin/activate # для Linux/Mac`
 #### или
 `venv\Scripts\activate # для Window`
