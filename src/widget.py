@@ -47,6 +47,15 @@ def mask_account_card(number_card_or_account: str) -> str:
 
 def get_date(date_input: str) -> str:
     """Функция, которая принимает строку, а возвращает дату."""
+    if len(date_input) != 10:
+        return "Ошибка ввода даты"
+    if date_input[2] == "." and date_input[5] == ".":
+        return date_input
+    for str_sim in date_input:
+        if (str_sim != "1" and str_sim != "2" and str_sim != "3" and str_sim != "4" and str_sim != "5" and
+            str_sim != "6" and str_sim != "7" and str_sim != "8" and str_sim != "9" and str_sim != "0" and
+            str_sim != "."):
+            return "Ошибка ввода даты"
     year_date_input: str = date_input[0:4]
     month_date_input: str = date_input[5:7]
     day_date_input: str = date_input[8:10]
@@ -59,9 +68,9 @@ def get_date(date_input: str) -> str:
     return date_result
 
 
-"""Вызовы функций"""
-mask_account_or_card_number: str = input("Введите номер карты или счёта ")
+"""Вызовы функций по умолчанию Maestro 7000792289606361 и 2003.07.25"""
+mask_account_or_card_number: str = "Maestro 7000792289606361"
 print(mask_account_card(mask_account_or_card_number))
 
-get_date_input: str = input("Введите дату")
+get_date_input: str = "2003.07.25"
 print(get_date(get_date_input))

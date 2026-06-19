@@ -1,6 +1,6 @@
 from typing import List
 
-"""словарь по умолчанию"""
+"""Cловарь по умолчанию"""
 default_dict: List[dict] = [
     {'id': 41428829, 'state': 'EXECUTED',
      'date': '2019-07-03T18:35:29.512364'},
@@ -28,13 +28,16 @@ def sort_by_date(data: List[dict], reverse: bool = True) -> List[dict]:
         return sorted_list
 
 
-"""ввод переменной state"""
-state: str = input()
+"""Переменная state, по умолчанию 'EXECUTED', """
+state: str = "EXECUTED"
 """постоянное значение state 'EXECUTED"""
 if not state:
-    state = 'EXECUTED'
-"""вызов функции"""
-filter_by_state(default_dict, state)
+    state = "EXECUTED"
+if state != "EXECUTED" and state != "CANCELED":
+    print([])
 
-"""Пример вызова функции"""
-sort_by_date(default_dict)
+"""вызов функции filter_by_state"""
+print(filter_by_state(default_dict, state))
+
+"""Вызова функции sort_by_date"""
+print(sort_by_date(default_dict))
