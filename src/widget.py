@@ -52,9 +52,19 @@ def get_date(date_input: str) -> str:
     if date_input[2] == "." and date_input[5] == ".":
         return date_input
     for str_sim in date_input:
-        if (str_sim != "1" and str_sim != "2" and str_sim != "3" and str_sim != "4" and str_sim != "5" and
-            str_sim != "6" and str_sim != "7" and str_sim != "8" and str_sim != "9" and str_sim != "0" and
-            str_sim != "."):
+        if (
+            str_sim != "1"
+            and str_sim != "2"
+            and str_sim != "3"
+            and str_sim != "4"
+            and str_sim != "5"
+            and str_sim != "6"
+            and str_sim != "7"
+            and str_sim != "8"
+            and str_sim != "9"
+            and str_sim != "0"
+            and str_sim != "."
+        ):
             return "Ошибка ввода даты"
     year_date_input: str = date_input[0:4]
     month_date_input: str = date_input[5:7]
