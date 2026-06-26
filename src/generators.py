@@ -1,4 +1,7 @@
-from typing import List, Dict, Any, Generator
+from typing import List
+from typing import Dict
+from typing import Any
+from typing import Generator
 
 """Неизменяемые данные"""
 SPACE: str = " "
