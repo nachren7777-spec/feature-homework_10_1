@@ -31,8 +31,9 @@ def get_mask_account(mask_account_input: str = "") -> str:
         return mask_account_mask
 
 
-card_number: str = input("Введите номер карты ")
-mask_account: str = input("Введите номер счета ")
+"""Вызовы функций по умолчанию 1234567890123456 и 12345678901234567890"""
+card_number: str = "1234567890123456"
+mask_account: str = "12345678901234567890"
 
 print(get_mask_card_number(card_number))
 print(get_mask_account(mask_account))
